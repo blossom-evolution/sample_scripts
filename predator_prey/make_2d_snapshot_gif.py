@@ -3,7 +3,7 @@ import errno
 import glob
 import imageio
 
-time = 300
+time = 999
 frame_duration = 0.1
 
 IMAGE_OUTPUT_DIR = 'images'

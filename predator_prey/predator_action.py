@@ -1,4 +1,5 @@
 import random
+import numpy as np
 from context import blossom
 from blossom.organism_list_funcs import organism_filter
 
@@ -13,8 +14,8 @@ from blossom.organism_list_funcs import organism_filter
 
 
 def predator(organism, organism_list, world, position_hash_table=None):
-    choice = random.randrange(0, 2)
-    if choice == 0:
+    # choice = random.randrange(0, 2)
+    if np.random.rand() < 1.0:
         if len(organism_filter(
             organism_list,
             lambda org_dict: (org_dict.species_name == 'prey1'),
@@ -22,13 +23,22 @@ def predator(organism, organism_list, world, position_hash_table=None):
         )) == 0:
             return 'move'
         else:
-            if random.randrange(0, 80) == 0:
-                if organism.food_current > organism.food_capacity // 2:
-                    return 'reproduce'
+            if np.random.rand() < 1/60:
+                return 'reproduce'
+                # if organism.food_current > organism.food_capacity // 2:
+                #     return 'reproduce'
+                # else:
+                #     return 'move'
+            else:
+                if np.random.rand() < 0.5:
+                    return 'eat'
                 else:
                     return 'move'
-            else:
-                return 'eat'
+
+                # if organism.food_current < organism.food_capacity // 2:
+                #     return 'eat'
+                # else:
+                #     return 'move'
     else:
         return 'move'
 

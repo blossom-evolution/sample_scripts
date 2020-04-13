@@ -10,7 +10,7 @@ import prey_params
 DATASET_OUTPUT_DIR = 'datasets/'
 
 START_TIME = 0
-END_TIME = 300
+END_TIME = 999
 
 # Create universe
 universe = blossom.Universe(world_param_dict=world_params.world_dict,
@@ -21,4 +21,4 @@ universe = blossom.Universe(world_param_dict=world_params.world_dict,
                             dataset_dir=DATASET_OUTPUT_DIR)
 
 # Iterate until end of simulation
-universe.run(verbosity=3, expanded=False)
+universe.run(verbosity=4, expanded=False)

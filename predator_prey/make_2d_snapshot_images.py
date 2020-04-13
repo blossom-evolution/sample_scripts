@@ -13,7 +13,7 @@ matplotlib.use('agg')
 import matplotlib.pyplot as plt
 import matplotlib.gridspec as gridspec
 
-time = 300
+time = 999
 DATASET_OUTPUT_DIR = 'datasets'
 IMAGE_OUTPUT_DIR = 'images'
 

@@ -7,13 +7,13 @@ species_dict = {}
 species_dict['species_name'] = 'predator1'
 
 # Number of organisms (int)
-species_dict['population_size'] = 150
+species_dict['population_size'] = 10
 
 # Initial DNA length (int)
 species_dict['dna_length'] = 4
 
 # Maximum old age (int, or 'None')
-species_dict['max_age'] = math.inf
+species_dict['max_age'] = 100
 
 # Action specification (str)
 species_dict['action_type'] = 'predator'
@@ -40,7 +40,7 @@ species_dict['water_capacity'] = 40
 species_dict['water_initial'] = 20
 
 # Water metabolism, in water per integer timestep (int, or 'None')
-species_dict['water_metabolism'] = 1
+species_dict['water_metabolism'] = 2
 
 # Water intake, in food per integer timestep (int, or 'None')
 species_dict['water_intake'] = 4
@@ -52,16 +52,16 @@ species_dict['max_time_without_water'] = 2
 species_dict['eating_type'] = 'eat_prey1'
 
 # Food capacity (int, or 'None')
-species_dict['food_capacity'] = 100
+species_dict['food_capacity'] = 60
 
 # Initial food level (int, or 'None')
-species_dict['food_initial'] = 60
+species_dict['food_initial'] = 40
 
 # Food metabolism, in food per integer timestep (int, or 'None')
-species_dict['food_metabolism'] = 1
+species_dict['food_metabolism'] = 4
 
 # Food intake, in food per integer timestep (int, or 'None')
-species_dict['food_intake'] = 4
+species_dict['food_intake'] = 8
 
 # Lifetime without food (int, or 'None')
 species_dict['max_time_without_food'] = 20

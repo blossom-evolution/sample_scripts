@@ -1,9 +1,10 @@
 import random
+import numpy as np
 
 
 def prey(organism, organism_list, world, position_hash_table=None):
-    choice = random.randrange(0, 100)
-    if choice == 0:
+    # choice = random.randrange(0, 20)
+    if np.random.rand() < 1/30:
         return 'reproduce'
     else:
         return 'move'

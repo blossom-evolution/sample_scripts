@@ -5,7 +5,7 @@ def eat_prey1(organism, organism_list, world, position_hash_table=None):
     position = tuple(organism.position)
     colocated = []
     for org in position_hash_table[position]:
-        if org.species_name == 'prey1':
+        if org.species_name == 'prey1' and org.alive:
             colocated.append(org)
     if len(colocated) == 0:
         return [organism]
@@ -17,7 +17,9 @@ def eat_prey1(organism, organism_list, world, position_hash_table=None):
     food_from_prey = 0.8 * (prey.food_capacity)
     diff = organism.food_capacity - organism.food_current
     intake = min(food_from_prey, diff)
-    organism.food_current += intake
+    organism = organism.update_parameter('food_current',
+                                         intake,
+                                         method='add')
 
     prey = prey.die('eaten')
 
