@@ -13,13 +13,13 @@ species_dict['population_size'] = 10
 species_dict['dna_length'] = 4
 
 # Maximum old age (int, or 'None')
-species_dict['max_age'] = 100
+species_dict['max_age'] = math.inf
 
 # Action specification (str)
 species_dict['action_type'] = 'predator'
 
 # Movement specification (str)
-species_dict['movement_type'] = 'simple_random'
+species_dict['movement_type'] = 'stationary'
 
 # Reproduction specification (str)
 species_dict['reproduction_type'] = 'pure_replication'
@@ -52,19 +52,19 @@ species_dict['max_time_without_water'] = 2
 species_dict['eating_type'] = 'eat_prey1'
 
 # Food capacity (int, or 'None')
-species_dict['food_capacity'] = 60
+species_dict['food_capacity'] = 50
 
 # Initial food level (int, or 'None')
-species_dict['food_initial'] = 40
+species_dict['food_initial'] = 50
 
 # Food metabolism, in food per integer timestep (int, or 'None')
-species_dict['food_metabolism'] = 4
+species_dict['food_metabolism'] = 1
 
 # Food intake, in food per integer timestep (int, or 'None')
 species_dict['food_intake'] = 8
 
 # Lifetime without food (int, or 'None')
-species_dict['max_time_without_food'] = 20
+species_dict['max_time_without_food'] = 5
 
 # Whether organisms can mutate (bool)
 species_dict['can_mutate'] = False
@@ -83,3 +83,5 @@ species_dict['custom_module_fns'] = ['predator_action.py',
 #     [4, 4],
 #     [6, 6],
 # ]
+
+species_dict['initial_positions'] = [[0, 0]] * species_dict['population_size']

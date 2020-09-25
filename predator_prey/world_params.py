@@ -8,7 +8,7 @@ world_dict['dimensionality'] = 2
 
 # Size of world (ints with correct dimensionality, or 'None')
 # example: world_size = 10 10
-world_dict['world_size'] = [10, 10]
+world_dict['world_size'] = [1, 4]
 # world_dict['world_size'] = 20
 
 # Filename for environment specification (str, or 'None')

@@ -18,7 +18,8 @@ universe = blossom.Universe(world_param_dict=world_params.world_dict,
                                                  prey_params.species_dict],
                             current_time=START_TIME,
                             end_time=END_TIME,
-                            dataset_dir=DATASET_OUTPUT_DIR)
+                            dataset_dir=DATASET_OUTPUT_DIR,
+                            pad_zeros=3)
 
 # Iterate until end of simulation
 universe.run(verbosity=4, expanded=False)

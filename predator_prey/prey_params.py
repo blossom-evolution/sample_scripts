@@ -7,13 +7,13 @@ species_dict = {}
 species_dict['species_name'] = 'prey1'
 
 # Number of organisms (int)
-species_dict['population_size'] = 50
+species_dict['population_size'] = 100
 
 # Initial DNA length (int)
 species_dict['dna_length'] = 4
 
 # Maximum old age (int, or 'None')
-species_dict['max_age'] = math.inf
+species_dict['max_age'] = 30
 
 # Action specification (str)
 species_dict['action_type'] = 'prey'

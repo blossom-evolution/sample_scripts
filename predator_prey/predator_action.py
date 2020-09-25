@@ -23,14 +23,14 @@ def predator(organism, organism_list, world, position_hash_table=None):
         )) == 0:
             return 'move'
         else:
-            if np.random.rand() < 1/60:
-                return 'reproduce'
-                # if organism.food_current > organism.food_capacity // 2:
-                #     return 'reproduce'
-                # else:
-                #     return 'move'
+            if np.random.rand() < 1/10:
+                # return 'reproduce'
+                if organism.food_current > organism.food_capacity // 2:
+                    return 'reproduce'
+                else:
+                    return 'eat'
             else:
-                if np.random.rand() < 0.5:
+                if np.random.rand() < 1/10:
                     return 'eat'
                 else:
                     return 'move'
