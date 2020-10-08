@@ -7,7 +7,7 @@ species_dict = {}
 species_dict['species_name'] = 'predator1'
 
 # Number of organisms (int)
-species_dict['population_size'] = 10
+species_dict['population_size'] = 20
 
 # Initial DNA length (int)
 species_dict['dna_length'] = 4
@@ -19,7 +19,7 @@ species_dict['max_age'] = math.inf
 species_dict['action_type'] = 'predator'
 
 # Movement specification (str)
-species_dict['movement_type'] = 'stationary'
+species_dict['movement_type'] = 'simple_random'
 
 # Reproduction specification (str)
 species_dict['reproduction_type'] = 'pure_replication'
