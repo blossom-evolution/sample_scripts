@@ -3,16 +3,20 @@ import random
 
 def eat_prey1(organism, population_dict, world, position_hash_table=None):
     position = tuple(organism.position)
-    colocated = []
+    colocated_prey = []
+    colocated_predators = []
     for org in position_hash_table[position]:
-        if org.species_name == 'prey1' and org.alive:
-            colocated.append(org)
-    if len(colocated) == 0:
+        if org.alive:
+            if org.species_name == 'prey1':
+                colocated_prey.append(org)
+            elif org.species_name == 'predator1':
+                colocated_predators.append(org)
+    if len(colocated_prey) == 0 or len(colocated_prey) <= len(colocated_predators):
         return [organism]
-    elif len(colocated) == 1:
-        prey = colocated[0]
+    elif len(colocated_prey) == 1:
+        prey = colocated_prey[0]
     else:
-        prey = colocated[random.randrange(0, len(colocated))]
+        prey = colocated_prey[random.randrange(0, len(colocated_prey))]
 
     food_from_prey = 0.8 * (prey.food_capacity)
     diff = organism.food_capacity - organism.food_current

@@ -15,7 +15,7 @@ from blossom.population_funcs import organism_filter
 
 def predator(organism, population_dict, world, position_hash_table=None):
     # choice = random.randrange(0, 2)
-    if np.random.rand() < 1.0:
+    if np.random.rand() < 1.0: # and population_dict['prey1']['statistics']['alive'] > population_dict['predator1']['statistics']['alive'] / 2:
         if len(organism_filter(
             population_dict['prey1']['organisms'],
             lambda org_dict: (org_dict.alive)
@@ -29,7 +29,7 @@ def predator(organism, population_dict, world, position_hash_table=None):
                 else:
                     return 'eat'
             else:
-                if np.random.rand() < 1/10:
+                if np.random.rand() < 1/10: # 1/10:
                     return 'eat'
                 else:
                     return 'move'
