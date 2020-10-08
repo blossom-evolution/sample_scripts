@@ -1,7 +1,7 @@
 import random
 
 
-def eat_prey1(organism, organism_list, world, position_hash_table=None):
+def eat_prey1(organism, population_dict, world, position_hash_table=None):
     position = tuple(organism.position)
     colocated = []
     for org in position_hash_table[position]:

@@ -37,36 +37,13 @@ maxes = []
 plot_dicts = {'predator1': [], 'prey1': []}
 
 for species in ['predator1', 'prey1']:
-    max_val = 0
-
     for i in range(time + 1):
         try:
-            living_organisms = 0
-
-            plot = [[0 for x in range(world_size[1])]
-                    for x in range(world_size[0])]
-
             with open(organism_paths[i], 'r') as f:
-                organism_list = json.load(f)
-
-            for organism in organism_list:
-                if organism['alive'] and organism['species_name'] == species:
-                    plot[organism['position'][0]][organism['position'][1]] += 1
-                    living_organisms += 1
-
-            plot_dicts[species].append(living_organisms)
-
-            for j in plot:
-                for i in j:
-                    if i > max_val:
-                        max_val = i
+                population_dict = json.load(f)
+            plot_dicts[species].append(population_dict[species]['statistics']['alive_count'])
         except:
             pass
-
-    maxes.append(max_val)
-
-print('Found maxes...')
-
 
 fig = plt.figure(figsize=(10, 8))
 
