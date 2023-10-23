@@ -4,7 +4,7 @@ import numpy as np
 
 def prey(organism, population_dict, world, position_hash_table=None):
     # choice = random.randrange(0, 20)
-    if np.random.rand() < 1/10: #1/30
+    if np.random.rand() < 1/300: #1/30
         return 'reproduce'
     else:
         return 'move'

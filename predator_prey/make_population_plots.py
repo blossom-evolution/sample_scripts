@@ -14,7 +14,6 @@ import matplotlib.pyplot as plt
 import matplotlib.gridspec as gridspec
 
 import blossom
-import flowerpot
 
 
 time = 999
@@ -23,7 +22,7 @@ IMAGE_OUTPUT_DIR = 'images'
 
 plot_dicts = {'predator1': [], 'prey1': []}
 
-ts = flowerpot.TimeSeries(DATASET_OUTPUT_DIR)
+ts = blossom.TimeSeries(DATASET_OUTPUT_DIR)
 
 # for ds in ts:
 #     population_dict = ds.population_dict

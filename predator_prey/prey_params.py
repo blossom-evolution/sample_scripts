@@ -7,13 +7,13 @@ species_dict = {}
 species_dict['species_name'] = 'prey1'
 
 # Number of organisms (int)
-species_dict['population_size'] = 20
+species_dict['population_size'] = 300
 
 # Initial DNA length (int)
 species_dict['dna_length'] = 4
 
 # Maximum old age (int, or 'None')
-species_dict['max_age'] = 30 #40
+species_dict['max_age'] = math.inf
 
 # Action specification (str)
 species_dict['action_type'] = 'prey'
@@ -55,7 +55,7 @@ species_dict['eating_type'] = None
 species_dict['food_capacity'] = 50
 
 # Initial food level (int, or 'None')
-species_dict['food_initial'] = 10
+species_dict['food_initial'] = 25
 
 # Food metabolism, in food per integer timestep (int, or 'None')
 species_dict['food_metabolism'] = 1
@@ -64,7 +64,7 @@ species_dict['food_metabolism'] = 1
 species_dict['food_intake'] = 4
 
 # Lifetime without food (int, or 'None')
-species_dict['max_time_without_food'] = 6
+species_dict['max_time_without_food'] = 0
 
 # Whether organisms can mutate (bool)
 species_dict['can_mutate'] = False

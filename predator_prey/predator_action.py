@@ -1,7 +1,7 @@
 import random
 import numpy as np
 from context import blossom
-from blossom.population_funcs import organism_filter
+from blossom.simulation import organism_filter
 
 # def predator(organism, population_dict, world, position_hash_table=None):
 #     choice = random.randrange(0, 4)
@@ -14,32 +14,48 @@ from blossom.population_funcs import organism_filter
 
 
 def predator(organism, population_dict, world, position_hash_table=None):
-    # choice = random.randrange(0, 2)
-    if np.random.rand() < 1.0: # and population_dict['prey1']['statistics']['alive'] > population_dict['predator1']['statistics']['alive'] / 2:
-        if len(organism_filter(
-            population_dict['prey1']['organisms'],
-            lambda org_dict: (org_dict.alive)
-        )) == 0:
-            return 'move'
-        else:
-            if np.random.rand() < 1/10:
-                # return 'reproduce'
-                if organism.food_current > organism.food_capacity // 2:
-                    return 'reproduce'
-                else:
-                    return 'eat'
-            else:
-                if np.random.rand() < 1/10: # 1/10:
-                    return 'eat'
-                else:
-                    return 'move'
-
-                # if organism.food_current < organism.food_capacity // 2:
-                #     return 'eat'
-                # else:
-                #     return 'move'
-    else:
+    if len(organism_filter(
+        population_dict['prey1']['organisms'],
+        lambda org_dict: (org_dict.alive)
+    )) == 0:
         return 'move'
+    else:
+        if np.random.rand() < 1/30:
+            if organism.food_current > organism.food_capacity // 2:
+                return 'reproduce'
+            else:
+                return 'eat'
+        else:
+            return 'eat'
+
+
+# def predator(organism, population_dict, world, position_hash_table=None):
+#     # choice = random.randrange(0, 2)
+#     if np.random.rand() < 1.0: # and population_dict['prey1']['statistics']['alive'] > population_dict['predator1']['statistics']['alive'] / 2:
+#         if len(organism_filter(
+#             population_dict['prey1']['organisms'],
+#             lambda org_dict: (org_dict.alive)
+#         )) == 0:
+#             return 'move'
+#         else:
+#             if np.random.rand() < 1/100:
+#                 # return 'reproduce'
+#                 if organism.food_current > organism.food_capacity // 2:
+#                     return 'reproduce'
+#                 else:
+#                     return 'eat'
+#             else:
+#                 if np.random.rand() < 2/10: # 1/10:
+#                     return 'eat'
+#                 else:
+#                     return 'move'
+
+#                 # if organism.food_current < organism.food_capacity // 2:
+#                 #     return 'eat'
+#                 # else:
+#                 #     return 'move'
+#     else:
+#         return 'move'
 
 
 def only_drink(organism, population_dict, world, position_hash_table=None):
