@@ -1,0 +1,46 @@
+seed: 2026
+timesteps: 600
+organism_limit: 20000
+
+# Recommended with recent Blossom I/O controls
+snapshot_interval: 20
+log_interval: 5
+retain_last_checkpoints: 5
+compact_json_output: true
+
+species:
+  - name: predator
+    population: 100
+    max_age: inf
+    action: predator_action
+    movement: simple_random
+    reproduction:
+      type: pure_replication
+    eating:
+      type: eat_prey
+      capacity: 250
+      initial: 200
+      metabolism: 10
+      intake: 80
+      days_without: 5
+    linked_modules:
+      - custom_behaviors.py
+  - name: prey
+    population: 500
+    max_age: inf
+    action: prey_action
+    movement: simple_random
+    reproduction:
+      type: pure_replication
+    linked_modules:
+      - custom_behaviors.py
+
+world:
+  dimensionality: 2
+  size: [1, 100]
+  water:
+    peak: inf
+  food:
+    peak: inf
+  obstacles:
+    peak: 0

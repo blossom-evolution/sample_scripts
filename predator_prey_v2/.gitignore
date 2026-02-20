@@ -1,0 +1,7 @@
+data/
+logs/
+datasets/
+images/
+gifs/
+__pycache__/
+*.py[cod]
